@@ -15,29 +15,22 @@ body {
     height: 100vh;
     padding: 0;
     background-color: var(--primary-color);
-    background-image: url('./stacked-steps-haikei.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     color: #fff;
     position: relative;
-    /* animation-name: rotate;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-    animation-timing-function: linear; */
+    background: linear-gradient(to right, transparent 50%, rgba(0,0,0,0.5) 50%), url('./stacked-steps-haikei.png');
+    background-size: 200% 100%;
+    animation: moveBackground 30s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes moveBackground {
     0% {
-        background-position: center;
-        transform: rotate(0deg);
+        background-position: 0 0;
     }
     100% {
-        background-position: center;
-        transform: rotate(360deg);
+        background-position: -100% 0;
     }
 }
+
 
 body::after {
     content: "";
