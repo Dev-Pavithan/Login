@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --primary-color: rgb(241,0,76);
+}
+
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    background-color: var(--primary-color);
+    background-image: url('./stacked-steps-haikei.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    /* animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear; */
+}
+
+@keyframes rotate {
+    0% {
+        background-position: center;
+        transform: rotate(0deg);
+    }
+    100% {
+        background-position: center;
+        transform: rotate(360deg);
+    }
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.login-card {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 400px;
+    height: 100%; 
+    padding: 20px 0;
+    border-radius: 10px;
+    background: rgba(25,0,10,0.3); 
+    backdrop-filter: blur(10px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-card h2, .login-card p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.login-form {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form > * {
+    margin: 10px 0;
+}
+
+.login-form :is(input, button) {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(64,0,20);
+}
+
+.login-form input {
+    color: #333;
+    background: rgba(64,0,20);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    opacity: 0.7;
+}
+
+.login-form input::placeholder {
+    color: #808080;
+}
+
+.login-form button {
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.login-form button:hover {
+    background: rgb(241,0,96);
+}
+
+.forget-password {
+    color: var(--primary-color);
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 448px) {
+    .login-card {
+        /* margin: 20px; */
+        width: 80%;
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 628px) {
+    .login-card {
+        padding: 40px;
+        width: 70%;
+        max-width: 500px;
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15px;
+    }
+}
